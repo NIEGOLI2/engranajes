@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Simulador de Engranajes</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <div id="left-panel">
+      <button id="add-gear" class="btn">+ Añadir Engranaje</button>
+      <div class="hint">Doble click para mover. Click simple para editar.</div>
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+    <div id="bottom-right">
+      <div id="controls">
+        <button id="start" class="btn small">Comenzar</button>
+        <button id="stop" class="btn small">Detener</button>
+      </div>
+      <div id="gear-list"></div>
+    </div>
+
+    <!-- Inspector / edición (aparece al hacer click) -->
+    <div id="inspector" class="panel hidden" role="dialog" aria-hidden="true">
+      <div class="panel-header">
+        <span id="inspector-title">Editar Engranaje</span>
+        <button id="close-inspector" class="btn small">Cerrar</button>
+      </div>
+      <div class="panel-body">
+        <label>Diámetro (px)
+          <input id="inp-diameter" type="number" min="8" step="1" />
+        </label>
+        <label>Número de dientes
+          <input id="inp-teeth" type="number" min="4" step="1" />
+        </label>
+        <label><input id="inp-driver" type="checkbox" /> Es motriz (solo 1)</label>
+        <label id="label-rpm">RPM (motriz)
+          <input id="inp-rpm" type="number" step="1" />
+        </label>
+        <div style="display:flex;gap:8px;margin-top:8px;">
+          <button id="save-gear" class="btn">Guardar</button>
+          <button id="delete-gear" class="btn danger">Eliminar</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="toast" class="hidden"></div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+:root{
+  --bg:#f6f6f5;
+  --panel:#ffffff;
+  --accent:#2b7a78;
+  --muted:#666;
+  --danger:#d64545;
+}
+*{box-sizing:border-box;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial}
+html,body,#app{height:100%;margin:0;background:var(--bg);-webkit-tap-highlight-color:transparent}
+#app{display:grid;grid-template-columns:80px 1fr;grid-template-rows:1fr;gap:0;height:100vh;align-items:stretch}
+#left-panel{background:var(--panel);padding:10px;border-right:1px solid #e6e6e6;display:flex;flex-direction:column;align-items:center;gap:10px}
+.btn{background:var(--accent);color:#fff;border:none;padding:10px 12px;border-radius:8px;font-weight:600}
+.btn.small{padding:6px 8px;font-size:13px;border-radius:6px}
+.btn.danger{background:var(--danger)}
+.hint{font-size:12px;color:var(--muted);text-align:center}
+#canvas{width:100%;height:100%;display:block;cursor:grab}
+#bottom-right{position:fixed;right:12px;bottom:12px;width:220px;background:var(--panel);padding:10px;border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+#gear-list{max-height:200px;overflow:auto;font-size:13px;color:var(--muted);margin-top:8px}
+.gear-row{display:flex;justify-content:space-between;padding:6px 4px;border-bottom:1px solid #f0f0f0}
+.panel{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:320px;background:var(--panel);border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.12);z-index:20}
+.panel.hidden{display:none}
+.panel-header{display:flex;justify-content:space-between;align-items:center;padding:10px;border-bottom:1px solid #f0f0f0}
+.panel-body{padding:10px;display:flex;flex-direction:column;gap:8px}
+label{display:flex;flex-direction:column;font-size:13px;color:#333}
+input[type="number"], input[type="text"]{padding:8px;border:1px solid #e6e6e6;border-radius:8px}
+#inspector{min-width:220px; right:12px; top:12px; left:auto; transform:none; position:fixed; width:260px}
+.panel-body{padding:8px;gap:6px}
+.panel-header{padding:8px}
+label{font-size:13px}
+input[type="number"], input[type="text"]{padding:6px;border-radius:8px}
+#inspector .btn{padding:8px 10px;font-size:13px}
+#toast{position:fixed;left:50%;transform:translateX(-50%);bottom:80px;background:#222;color:#fff;padding:8px 12px;border-radius:8px;font-size:13px}
+#toast.hidden{display:none}
